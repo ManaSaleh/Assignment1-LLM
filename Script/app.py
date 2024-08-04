@@ -29,7 +29,7 @@ def search_images_by_caption():
                     st.image(best_image, caption=f"Best Match\nCaption: {search_text}\nSimilarity Score: {max_score:.2f}")
                 except Exception as e:
                     st.error(f"An error occurred while searching for images: {e}")
-requirements
+
 def upload_image_and_generate_caption():
     st.header("Image Upload and Caption Generation")
     uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
