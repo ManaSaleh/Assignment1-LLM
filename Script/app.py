@@ -1,6 +1,9 @@
 import os
-import streamlit as st
 from PIL import Image
+from transformers import CLIPProcessor, CLIPModel, pipeline
+import torch
+from sentence_transformers.util import cos_sim
+import streamlit as st
 from image_caption_generator import ImageCaptionGenerator
 from image_searcher import ImageSearcher
 
