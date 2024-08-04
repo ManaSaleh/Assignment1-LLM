@@ -1,6 +1,6 @@
 import os
 from PIL import Image
-from transformers import CLIPProcessor, CLIPModel, pipeline
+from transformers import CLIPProcessor, CLIPModel
 import torch
 from sentence_transformers.util import cos_sim
 import streamlit as st
@@ -25,12 +25,11 @@ def search_images_by_caption():
             else:
                 try:
                     best_image_index, max_score = image_searcher.search_images(search_text, image_tensors)
-
                     best_image = Image.open(image_paths[best_image_index])
                     st.image(best_image, caption=f"Best Match\nCaption: {search_text}\nSimilarity Score: {max_score:.2f}")
                 except Exception as e:
                     st.error(f"An error occurred while searching for images: {e}")
-
+requirements
 def upload_image_and_generate_caption():
     st.header("Image Upload and Caption Generation")
     uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
@@ -38,16 +37,15 @@ def upload_image_and_generate_caption():
     if uploaded_file is not None:
         try:
             image = Image.open(uploaded_file)
-            st.image(image, caption="Uploaded Image", use_column_width=True)            
+            st.image(image, caption="Uploaded Image", use_column_width=True)
             with st.spinner("Generating caption..."):
                 caption = caption_generator.generate_caption(image)
                 caption_with_title = caption.upper()
-                st.markdown(f'#### {caption_with_title}')  
+                st.markdown(f'#### {caption_with_title}')
         except Exception as e:
             st.error(f"An error occurred while processing the image: {e}")
     else:
         st.write("Please upload an image file.")
-
 
 def main():
     st.title("Image Search and Caption Generation")
