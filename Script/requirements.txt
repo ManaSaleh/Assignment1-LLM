@@ -1,6 +1,5 @@
-streamlit
-torch
-transformers
-sentence-transformers
-pillow
-
+streamlit>=1.20.0
+torch>=1.13.1
+transformers>=4.14.0
+sentence-transformers>=2.2.0
+pillow>=9.0.1
