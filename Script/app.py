@@ -40,7 +40,7 @@ def upload_image_and_generate_caption():
             st.image(image, caption="Uploaded Image", use_column_width=True)
             with st.spinner("Generating caption..."):
                 caption = caption_generator.generate_caption(image)
-                caption_with_title = caption.upper()
+                caption_with_title = caption.capitalize()
                 st.markdown(f'#### {caption_with_title}')
         except Exception as e:
             st.error(f"An error occurred while processing the image: {e}")
