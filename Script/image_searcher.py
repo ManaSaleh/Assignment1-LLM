@@ -13,7 +13,7 @@ class ImageSearcher:
 
     def load_images(self):
         image_paths = [os.path.join(self.image_dir, file) for file in os.listdir(self.image_dir) if file.lower().endswith(('.png', '.jpg', '.jpeg'))]
-        image_tensors = [Image.open(path).convert("RGB") for path in image_paths[:800]]
+        image_tensors = [Image.open(path).convert("RGB") for path in image_paths[:600]]
         return image_paths, image_tensors
 
     def search_images(self, search_text, image_tensors):
