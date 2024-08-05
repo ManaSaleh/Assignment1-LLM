@@ -6,7 +6,7 @@ from sentence_transformers.util import cos_sim
 
 
 class ImageSearcher:
-    def __init__(self, model_name="openai/clip-vit-base-patch32", image_dir="images"):
+    def __init__(self, model_name="openai/clip-vit-base-patch32", image_dir="Script/images"):
         self.model = CLIPModel.from_pretrained(model_name)
         self.processor = CLIPProcessor.from_pretrained(model_name)
         self.image_dir = image_dir
