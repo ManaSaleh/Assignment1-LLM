@@ -3,6 +3,7 @@
 This application includes the following features:
 
 1. **Search for Images by Caption**: Enter a caption to search for and retrieve the most similar image from a predefined directory.
+- Due to resource limitations, the app searches through 150 images.
    ![Search by Caption](Images/SearchEngin.png)
 
 2. **Image Upload and Caption Generation**: Upload an image and receive an automatically generated caption describing its content.
